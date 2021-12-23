@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HalvaBot</title>
+</head>
+<body>
+<!-- <form action="cgi-bin/restart.sh" method="post"><button>Привет</button></form> -->
+<button id="restartButton" onclick="restart()">Restart bot!</button>
+<a href="bot.log" download="bot.log">
+    <button type="button">Download log</button>
+</a>
+</body>
+</html>
+
+<script>
+    function restart() {
+        let Button = document.getElementById("restartButton");
+        const xhr = new XMLHttpRequest();
+        Button.setAttribute('disabled','disabled');
+        xhr.open("POST", "cgi-bin/restart.sh");
+        xhr.setRequestHeader('Content-Type', 'text-plain');
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                Button.removeAttribute('disabled');
+            }
+        };
+    }
+</script>
