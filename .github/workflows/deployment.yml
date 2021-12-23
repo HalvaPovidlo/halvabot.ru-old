@@ -1,0 +1,23 @@
+name: Deploy to server
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+        S_NAME: ${{ secrets.SERVER_NAME }}
+        S_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy with rsync
+      shell: bash
+      run: |
+        sudo apt-get install sshpass
+        sshpass -p "$S_PASSWORD" rsync -avze 'ssh -o StrictHostKeyChecking=no' www/* "$S_NAME":/var/www/
+    - name: Restart lighttpd
+      run: sshpass -p "$S_PASSWORD" ssh -o StrictHostKeyChecking=no "$S_NAME" /etc/init.d/lighttpd restart
