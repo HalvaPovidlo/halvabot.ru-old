@@ -1,23 +1,22 @@
-name: Deploy to server
-
+name: deploy
 on:
-  push:
-    branches:
-      - master
+  release:
+    types: [ published ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-        S_NAME: ${{ secrets.SERVER_NAME }}
-        S_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
-
+      S_NAME: ${{ secrets.YANDEX_SERVER_NAME }}
+      S_PASSWORD: ${{ secrets.YANDEX_SSH }}
     steps:
-    - uses: actions/checkout@v2
-    - name: Deploy with rsync
-      shell: bash
-      run: |
-        sudo apt-get install sshpass
-        sshpass -p "$S_PASSWORD" rsync -avze 'ssh -o StrictHostKeyChecking=no' www/* "$S_NAME":/var/www/
-    - name: Restart lighttpd
-      run: sshpass -p "$S_PASSWORD" ssh -o StrictHostKeyChecking=no "$S_NAME" /etc/init.d/lighttpd restart
+      - uses: actions/checkout@v3
+
+      - uses: shimataro/ssh-key-action@v2.3.1
+        with:
+          key: ${{ secrets.YANDEX_SSH }}
+          known_hosts: ${{ secrets.YANDEX_HOST }}
+
+      - name: Deploy
+        run: |
+          rsync -avze "ssh -o StrictHostKeyChecking=no" www/* "$S_NAME":/home/halva/gobot/www/
