@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+}
+
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 100vw;
+}
+
+.player {
+    display: block;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 16px;
+    max-height: 100vw;
+    /*box-shadow: inset -6px -6px 12px rgba(0, 0, 0, 0.8), inset 6px 6px 12px rgba(255, 255, 255, 0.4);*/
+}
+
+.details-img {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.details-img>img {
+    display: block;
+    margin: 0 auto;
+    max-width: calc((100vw - 480px)/(1280 - 480) * (300 - 200) + 200px);
+    border-radius: 50%;
+}
+
+.details-title {
+    text-align: center;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: calc((100vw - 480px)/(1280 - 480) * (40 - 24) + 24px);
+}
+
+.details-artist {
+    text-align: center;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc((100vw - 480px)/(1280 - 480) * (30 - 16) + 16px);
+    ;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: calc((100vw - 480px)/(1280 - 480) * (25 - 15) + 15px);
+    ;
+    margin-top: calc((100vw - 480px)/(1280 - 480) * (12 - 7) + 7px);
+    ;
+}
+
+.player-controls .skip-button {
+    display: flex;
+    margin: 0 30px;
+    padding: 20px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    color: #1f1f1f;
+    font-size: calc((100vw - 480px)/(1280 - 375) * (80 - 40) + 40px);
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.player-controls .broadcast-button {
+    border: none;
+    outline: none;
+    font-size: calc((100vw - 480px)/(1280 - 375) * (40 - 24) + 24px);
+    color: #1f1f1f;
+    background-color: #fff;
+    margin: 0 30px;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.player-controls .repeat-button {
+    border: none;
+    outline: none;
+    font-size: calc((100vw - 480px)/(1280 - 375) * (40 - 24) + 24px);
+    color: #1f1f1f;
+    background-color: #fff;
+    margin: 0 30px;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.player-page {
+    max-width: 100vw;
+}
+
+.searchbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.image-container img {
+    width: calc((100vw - 480px)/(1280 - 480) * (50 - 25) + 25px);
+    border-radius: 50%;
+}
+
+.searchbar-container {
+    padding: 3vw;
+}
+
+.searchbar-container input {
+    background-color: white;
+    background-image: url('https://cdn.iconscout.com/icon/premium/png-256-thumb/search-4967899-4170595.png');
+    background-size: calc((100vw - 480px)/(1280 - 480) * (28 - 16) + 16px);
+    ;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    min-width: calc((100vw - 480px)/(1280 - 480) * (65 - 50) + 50vw);
+    min-height: calc((100vw - 480px)/(1280 - 480) * (52 - 40) + 40px);
+    border: 2px solid #1F1F1F;
+    border-radius: 10px;
+    outline: none;
+}
+
+@media screen and (max-width: 444px) {
+    .searchbar-wrapper {
+        margin-top: 50px;
+    }
+}
+
+.sidebar-button-container {
+    margin-right: 20px;
+}
+
+.sidebar-button-container button {
+    border: none;
+    outline: none;
+    font-size: calc((100vw - 480px)/(1280 - 480) * (48 - 16) + 16px);
+    background-color: #fff;
+}
+
+.profile-picture-container {
+    margin-left: calc((100vw - 480px)/(1280 - 480) * (10 - 5) + 5px);
+    ;
+}
+
+.profile-picture-container img {
+    border-radius: 50%;
+}
