@@ -1,30 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { faGripLines } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { handleEnqueue } from "../API/API"
 
 const SearchBar = (props) => {
-
-
-
     const [searchValue, setSearchValue] = useState('');
-
-    const submitSong = async (song) => {
-        const requestOptions = {
-            crossDomain: true,
-            mode: 'no-cors',
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ song: song })
-        };
-        const response = await fetch('http://51.250.81.4:9091/api/v1/music/enqueue', requestOptions);
-        const data = await response.json()
-    }
-
     const inputElement = useRef(null);
 
     const handleSubmit = (e) => {
-        submitSong(searchValue);
         e.preventDefault();
+        handleEnqueue(searchValue);
         setSearchValue('');
     }
 
