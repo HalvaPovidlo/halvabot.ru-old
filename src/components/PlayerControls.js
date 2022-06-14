@@ -1,42 +1,16 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRepeat, faForward, faPodcast } from '@fortawesome/free-solid-svg-icons'
+import { handleSkip, handleLoop, handleRadio } from '../API/API'
 
 const PlayerControls = () => {
-
-    const handleSkip = async () => {
-        const requestOptions = {
-            crossDomain: true,
-            mode: 'no-cors',
-            method: 'GET',
-            headers: {
-                'Content-Type':'application/json'
-            },
-        };
-        const response = await fetch('http://51.250.81.4:9091/api/v1/music/skip', requestOptions);
-        const data = await response.json()
-        console.log(data)
-    }
-
-    const handleLoop = async () => {
-        const requestOptions = {
-            crossDomain: true,
-            mode: 'no-cors',
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: '{"enable":true}'
-        };
-
-        const response = await fetch('http://51.250.81.4:9091/api/v1/music/setloop', requestOptions);
-        const loopStatus = await response.json()
-        requestOptions.body = { "enable": loopStatus };
-        console.log(requestOptions);
-    }
 
     return (
         <div className='player-controls'>
 
-            <button className="broadcast-button">
+            <button className="broadcast-button" onClick={(e) => {
+                handleRadio();
+            }}>
                 <FontAwesomeIcon icon={faPodcast}></FontAwesomeIcon>
             </button>
 
