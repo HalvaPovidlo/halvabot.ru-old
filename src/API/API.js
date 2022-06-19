@@ -1,6 +1,5 @@
 import axios from 'axios'
-//const URL = "http://51.250.81.4:9091/api/v1/music";
-export const URL = "http://192.168.1.113:9091/api/v1/music";
+export const URL = "http://51.250.81.4:9091/api/v1/music";
 
 
 export const handleEnqueue = async (song) => {
