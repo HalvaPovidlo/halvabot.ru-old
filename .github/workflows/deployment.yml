@@ -27,6 +27,3 @@ jobs:
       - name: Deploy
         run: |
           rsync -avze "ssh -o StrictHostKeyChecking=no" build/* "$S_NAME":/home/halva/gobot/www/
-      - name: Serve
-        run: |
-          serve -s www -l 8080

@@ -1,32 +1,43 @@
 import React, { useEffect, useState } from 'react'
 import PlayerControls from './PlayerControls'
 import PlayerDetails from './PlayerDetails'
+import { URL } from '../API/API'
 
 const Player = (props) => {
-  const[data, setData] = useState({});
+  const [data, setData] = useState({});
+  //const [radioStatus, setRadioStatus] = useState(false);
 
   useEffect(() => {
-    const URL = "http://51.250.81.4:9090/api/v1/music";
     const handleNow = async () => {
       const requestOptions = {
         method: 'GET',
       };
       const response = await fetch(URL + '/now', requestOptions);
       const data = await response.json();
-      return data;
+      setTimeout(() => {
+        setData(data);
+      }, 1000)
     };
 
-    handleNow()
-      .then((data) => {
-        setData(data);
-      });
+    /*const getRadioStatus = async () => {
+      const requestOptions = {
+        method: "GET",
+      };
 
-  }, [])
+      const response = await fetch(URL + '/radiostatus', requestOptions);
+      const data = await response.json();
+      console.log(data);
+      data === "true" ? setRadioStatus(true) : setRadioStatus(false);
+    }*/
+
+    handleNow();
+    //getRadioStatus();
+  }, [data])
 
   return (
     <div className='player'>
       <audio></audio>
-      <PlayerDetails data={data}> </PlayerDetails>
+      <PlayerDetails data={data} radioStatus> </PlayerDetails>
       <PlayerControls> </PlayerControls>
     </div>
   )
