@@ -1,4 +1,6 @@
-const URL = "http://51.250.81.4:9090/api/v1/music";
+import axios from 'axios'
+//const URL = "http://51.250.81.4:9091/api/v1/music";
+export const URL = "http://192.168.1.113:9091/api/v1/music";
 
 
 export const handleEnqueue = async (song) => {
@@ -66,15 +68,24 @@ export const handleStats = async () => {
 
 export const handleRadio = async () => {
     const requestOptions = {
-        crossDomain: true,
-        mode: 'no-cors',
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: '{"enable":true}'
+        body: JSON.stringify({enable: true})
     };
 
-    const response = await fetch(URL + '/radio', requestOptions);
-    const loopStatus = await response.json()
-    requestOptions.body = { "enable": loopStatus };
+    const response = await fetch(URL + '/setradio', requestOptions);
+    return response;
 }
 
+
+
+export const getMockURL = async () => {
+    const response = await axios.get("http://halvabot.ru/mock", { method: 'GET' });
+    return response;    //async data needs to be used on fly
+    //setMockURL(response.data);
+}
+
+export const getServerURL = async () => {
+    const response = await axios.get("http://halvabot.ru/server", { method: "GET" });
+    return response;    //async data needs to be used on fly
+    //setServerURL(response.data);
+}

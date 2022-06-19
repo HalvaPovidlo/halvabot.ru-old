@@ -27,14 +27,18 @@ body {
 .details-img {
     position: relative;
     width: fit-content;
+    overflow: hidden;
+    width: calc((100vw - 480px)/(1280 - 480) * (300 - 200) + 200px);
+    height: calc((100vw - 480px)/(1280 - 480) * (300 - 200) + 200px);
+    border-radius: 50%;
     margin: 0 auto;
 }
 
 .details-img>img {
     display: block;
     margin: 0 auto;
-    max-width: calc((100vw - 480px)/(1280 - 480) * (300 - 200) + 200px);
-    border-radius: 50%;
+    margin-left: -25%;
+    height: 100%;
 }
 
 .details-title {
@@ -75,6 +79,11 @@ body {
     font-size: calc((100vw - 480px)/(1280 - 375) * (80 - 40) + 40px);
     cursor: pointer;
     background-color: #fff;
+}
+
+.button:active{
+    position: relative;
+    top: 1px;
 }
 
 .player-controls .broadcast-button {
