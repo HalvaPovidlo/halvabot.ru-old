@@ -1,8 +1,9 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRepeat, faForward, faPodcast } from '@fortawesome/free-solid-svg-icons'
-import { handleSkip, handleLoop, handleRadio } from '../API/API'
+import { handleSkip, handleLoop, handleRadio } from '../../API/API';
 import { useState } from 'react'
+import './PlayerControls.css'
 
 const PlayerControls = () => {
 
