@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react'
 import { faGripLines } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { handleEnqueue } from "../API/API"
+import { handleEnqueue } from '../../API/API'
+import './SearchBar.css'
 
 const SearchBar = (props) => {
     const [searchValue, setSearchValue] = useState('');

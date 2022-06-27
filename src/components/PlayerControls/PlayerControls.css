@@ -1,0 +1,44 @@
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-controls .skip-button {
+    display: flex;
+    margin: 0 clamp(10px, 15px, 30px);
+    padding: clamp(5px, 20px);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    color: #1f1f1f;
+    font-size: clamp(40px, 5vw, 80px);
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.player-controls .button {
+    border-radius: 20%;
+}
+
+.player-controls .broadcast-button {
+    border: none;
+    outline: none;
+    font-size: clamp(24px, 3vw, 40px);
+    color: #1f1f1f;
+    background-color: #fff;
+    margin: 0 clamp(10px, 15px, 30px);
+    cursor: pointer;
+    padding: clamp(5px, 20px);
+}
+
+.player-controls .repeat-button {
+    border: none;
+    outline: none;
+    font-size: clamp(24px, 3vw, 40px);
+    color: #1f1f1f;
+    background-color: #fff;
+    margin: 0 clamp(10px, 15px, 30px);
+    cursor: pointer;
+    padding: clamp(5px, 20px);
+}
