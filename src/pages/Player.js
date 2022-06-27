@@ -1,12 +1,13 @@
 import React from 'react'
-import SearchBar from '../components/SearchBar'
-import Player from '../components/Player'
+import SearchBar from '../components/SearchBar/SearchBar'
+import Player from '../components/Player/Player'
+import Navbar from '../components/Navbar/Navbar'
 
 const PlayerPage = () => {
   return (
     <>
       <div className='player-page'>
-        <SearchBar />
+        <Navbar />
         <Player/>
       </div>
 

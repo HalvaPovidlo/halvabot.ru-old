@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import PlayerControls from './PlayerControls'
-import PlayerDetails from './PlayerDetails'
-import { URL } from '../API/API'
+import PlayerDetails from '../PlayerDetails/PlayerDetails'
+import PlayerControls from '../PlayerControls/PlayerControls'
+import { URL } from '../../API/API'
+import './Player.css'
 
 const Player = (props) => {
   const [data, setData] = useState({});
-  //const [radioStatus, setRadioStatus] = useState(false);
 
   useEffect(() => {
     const handleNow = async () => {
@@ -19,19 +19,7 @@ const Player = (props) => {
       }, 1000)
     };
 
-    /*const getRadioStatus = async () => {
-      const requestOptions = {
-        method: "GET",
-      };
-
-      const response = await fetch(URL + '/radiostatus', requestOptions);
-      const data = await response.json();
-      console.log(data);
-      data === "true" ? setRadioStatus(true) : setRadioStatus(false);
-    }*/
-
     handleNow();
-    //getRadioStatus();
   }, [data])
 
   return (

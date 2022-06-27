@@ -1,4 +1,5 @@
 import React from 'react'
+import "./PlayerDetails.css"
 
 const PlayerDetails = (props) => {
 
@@ -11,10 +12,10 @@ const PlayerDetails = (props) => {
             </div>
             {/* music progressbar */}
             <h3 className='details-title'>
-                {props.data?.title}
+                {props.data?.title || "Lorem Ipsum asd qwe"}
             </h3>
             <h4 className='details-artist'>
-                {props.data?.artist_name}
+                {props.data?.artist_name || "Lorem Ipsum zzz ZzZ"}
             </h4>
         </div>
     )
