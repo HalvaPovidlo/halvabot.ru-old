@@ -64,19 +64,19 @@
 }
 
 .hamburger {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    background-color: #252525;
+    border: none;
+    outline: none;
+    font-size: clamp(14px, 5vw, 48px);
+    background-color: #fff;
     cursor: pointer;
-    display: none;
 }
 
-.profile-picture img{
+.profile-picture img {
     height: 40px;
     width: 40px;
     border-radius: 50%;
 }
+
 
 .input-container input {
     border: 1px solid #252525;
@@ -87,19 +87,19 @@
     background-position: clamp(10px, 1vw, 15px), clamp(10px, 1vw, 15px);
     background-repeat: no-repeat;
     padding-left: 40px;
-    width: clamp(100px, 50vw, 270px);
+    width: clamp(150px, 40vw, 270px);
     height: clamp(40px, 3vw, 52px);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
     .hamburger {
-        display: flex;
+        visibility: hidden;
     }
 }
 
 @media screen and (max-width: 768px) {
     .navigation-menu ul {
-        display: none;
+        visibility: hidden;
     }
 }
 
@@ -132,15 +132,16 @@
 }
 
 @media screen and (max-width: 768px) {
-    .navigation-menu.expanded ul {
+    .navigation-menu .expanded{
         display: block;
     }
 
-    .navigation-menu{
+    .navigation-menu {
+        flex: initial;
         display: none;
     }
-
-    .brand-name{
+    
+    .brand-name {
         display: none;
     }
 }

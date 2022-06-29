@@ -16,11 +16,12 @@
 }
 
 .details-title {
+    padding-top: 20px;
     text-align: center;
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
-    font-size: clamp(20px, 5vw, 40px);
+    font-size: clamp(20px, 5vw, 33px);
 }
 
 .details-artist {
