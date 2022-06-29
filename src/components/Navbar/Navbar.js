@@ -4,26 +4,28 @@ import logo from '../../logo.jpg'
 import './Navbar.css'
 import { useRef } from 'react';
 import { handleEnqueue } from '../../API/API';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGripLines } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = (props) => {
 
     const [isNavExpanded, setIsNavExpanded] = useState(false)
     const links = [
         {
-            "text": "D bot",
-            "link": "D-Bot"
+            "text": "Bot",
+            "link": "bot"
         }, {
             "text": "Фильмотека",
-            "link": "Film-Library"
+            "link": "films"
         }, {
             "text": "Стена кринжа",
-            "link": "Cringe-Wall"
+            "link": "cringe-wall"
         }, {
             "text": "Бухичи",
-            "link": "Boozling"
+            "link": "boozling"
         }, {
             "text": "Quotes",
-            "link": "Quotes"
+            "link": "quotes"
         }];
 
     const linkList = links.map((link, index) =>
@@ -45,9 +47,7 @@ const Navbar = (props) => {
 
     return (
         <nav className="navigation">
-            <a href="/" className={
-                isNavExpanded ? 'brand-name' : 'brand-name expanded'
-            }>
+            <a href="bot" className={'brand-name'}>
                 <img src={logo} alt='logo'></img>
                 <div className='logo-title'>Halva&<br />Povidlo</div>
             </a>
@@ -57,6 +57,7 @@ const Navbar = (props) => {
                     setIsNavExpanded(!isNavExpanded)
                 }}
             >
+                <FontAwesomeIcon icon={faGripLines} />
             </button>
             <div
                 className={

@@ -1,5 +1,4 @@
 import './App.css';
-import Home from './pages/Home';
 import Player from './pages/Player.js';
 import FilmLibrary from './pages/FilmLibrary';
 import CringeWall from './pages/CringeWall';
@@ -16,12 +15,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path="D-bot" element={<Player />} />
-        <Route path="Film-Library" element={<FilmLibrary />} />
-        <Route path="Cringe-Wall" element={<CringeWall />} />
-        <Route path="Boozling" element={<Boozling />} />
-        <Route path="Quotes" element={<Quotes />} />
+        <Route path="bot" element={<Player />} />
+        <Route path="films" element={<FilmLibrary />} />
+        <Route path="cringe-wall" element={<CringeWall />} />
+        <Route path="boozling" element={<Boozling />} />
+        <Route path="quotes" element={<Quotes />} />
       </Routes>
     </BrowserRouter>
   );
