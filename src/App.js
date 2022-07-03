@@ -17,8 +17,7 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Navigate to="bot" replace />} />
-          <Route path="bot" element={<Player />} />
+          <Route path='/' element={<Player />} />
           <Route path="films" element={<FilmLibrary />} />
           <Route path="cringe-wall" element={<CringeWall />} />
           <Route path="boozling" element={<Boozling />} />
