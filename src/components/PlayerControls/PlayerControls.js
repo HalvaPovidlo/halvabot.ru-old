@@ -6,7 +6,6 @@ import skip from '../../assets/skip.svg'
 import radio from '../../assets/radio.svg'
 import repeat from '../../assets/repeat.svg'
 
-
 const PlayerControls = () => {
 
     const [isRadioActive, setIsRadioActive] = useState(false);
@@ -31,12 +30,14 @@ const PlayerControls = () => {
                     handleRadioClick();
                 }}>
                 <img src={radio} alt='radio'></img> 
+
             </button>
 
             <button className="skip-button button" onClick={(e) => {
                 handleSkip();
             }}>
                 <img src={skip} alt='skip'></img> 
+
             </button>
 
             <button

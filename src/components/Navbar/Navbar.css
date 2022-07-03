@@ -66,7 +66,6 @@
     border-bottom: 2px #252525 solid;
     margin-bottom: -2px;
 }
-
 .hamburger {
     border: none;
     outline: none;
@@ -173,18 +172,16 @@
         font-size: 20px;
         line-height: 28px;
         color: #FFFFFF;
+
     }
 
     .navigation-menu li:hover {
         background-color: #eee;
     }
-
-
     .navigation-menu.expanded {
         z-index: 2;
         display: block;
     }
-
     .brand-name {
         display: none;
     }
