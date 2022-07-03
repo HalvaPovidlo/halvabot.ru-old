@@ -1,9 +1,7 @@
 .details-img {
-    position: relative;
-    width: fit-content;
     overflow: hidden;
-    width: clamp(100px, 50vw, 350px);
-    height: clamp(100px, 50vw, 350px);
+    width: clamp(1px, 50vw, 300px);
+    height: clamp(1px, 50vw, 300px);
     border-radius: 50%;
     margin: 1rem auto;
 }
@@ -30,4 +28,15 @@
     font-style: normal;
     font-weight: 500;
     font-size: clamp(14px, 3vw, 30px);
+    padding-bottom: 5vw;
+}
+
+@media screen and (max-width: 768px) {
+    .details-img {
+        overflow: hidden;
+        width: 50vw;
+        height: 50vw;
+        border-radius: 50%;
+        margin: 1rem auto;
+    }
 }
