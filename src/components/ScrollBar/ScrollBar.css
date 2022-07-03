@@ -1,0 +1,24 @@
+.scrollbar-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scrollbar {
+    background-color: #D9D9D9;
+    width: 60vw;
+}
+
+.scrollbar-left {
+    width: 30vw;
+    height: 10px;
+    background-color: #000000;
+}
+
+.timing{
+    display: flex;
+    width: 60vw;
+    justify-content: space-between;
+    font-family: 'Manrope';
+    font-style: normal;
+}

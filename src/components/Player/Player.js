@@ -6,16 +6,23 @@ import './Player.css'
 
 const Player = (props) => {
   const [data, setData] = useState({});
+  const [songStatus, setSongStatus] = useState();
 
   useEffect(() => {
     const handleNow = async () => {
       const requestOptions = {
         method: 'GET',
       };
-      const response = await fetch(URL + '/now', requestOptions);
-      const data = await response.json();
+
+      const nowResponse = await fetch(URL + '/now', requestOptions);
+      const nowData = await nowResponse.json();
+      
+      const songStatusResponse = await fetch(URL + '/songstatus', {method: "GET"})
+      const songStatusResponseData = await songStatusResponse.json(); 
+
       setTimeout(() => {
-        setData(data);
+        setData(nowData);
+        setSongStatus(songStatusResponseData)
       }, 1000)
     };
 
@@ -25,7 +32,7 @@ const Player = (props) => {
   return (
     <div className='player'>
       <audio></audio>
-      <PlayerDetails data={data} radioStatus> </PlayerDetails>
+      <PlayerDetails data={data} songStatus={songStatus}> </PlayerDetails>
       <PlayerControls> </PlayerControls>
     </div>
   )

@@ -4,15 +4,9 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     background-color: #fff;
-}
-
-.App {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*border: 2px solid green;*/
+    height: 90vh;
 }
 
 .button:active {
@@ -20,36 +14,16 @@ body {
     top: 1px;
 }
 
-/*
+
 
 .player-page {
-    max-width: 80vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-
-
-.image-container img {
-    width: clamp(25px, 50px);
-    border-radius: 50%;
+.sidebar{
+    width: 260px;
+    flex-shrink: 0;
+    background-color: #1F1F1F;
 }
-
-
-.sidebar-button-container {
-    margin-right: clamp(10px, 1vw, 20px);
-}
-
-.sidebar-button-container button {
-    border: none;
-    outline: none;
-    font-size: clamp(14px, 5vw, 48px);
-    background-color: #fff;
-}
-
-.profile-picture-container {
-    margin-left: calc((100vw - 480px)/(1280 - 480) * (10 - 5) + 5px);
-    ;
-}
-
-.profile-picture-container img {
-    border-radius: 50%;
-}*/

@@ -1,9 +1,11 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faRepeat, faForward, faPodcast } from '@fortawesome/free-solid-svg-icons'
 import { handleSkip, handleLoop, handleRadio } from '../../API/API';
 import { useState } from 'react'
 import './PlayerControls.css'
+import skip from '../../assets/skip.svg'
+import radio from '../../assets/radio.svg'
+import repeat from '../../assets/repeat.svg'
+
 
 const PlayerControls = () => {
 
@@ -28,13 +30,13 @@ const PlayerControls = () => {
                     handleRadio();
                     handleRadioClick();
                 }}>
-                <FontAwesomeIcon icon={faPodcast}></FontAwesomeIcon>
+                <img src={radio} alt='radio'></img> 
             </button>
 
             <button className="skip-button button" onClick={(e) => {
                 handleSkip();
             }}>
-                <FontAwesomeIcon icon={faForward}></FontAwesomeIcon>
+                <img src={skip} alt='skip'></img> 
             </button>
 
             <button
@@ -44,7 +46,7 @@ const PlayerControls = () => {
                     handleLoop();
                     handleLoopClick();
                 }}>
-                <FontAwesomeIcon icon={faRepeat}></FontAwesomeIcon>
+                <img src={repeat} alt='repeat'></img> 
             </button>
         </div>
     )

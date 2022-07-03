@@ -6,7 +6,8 @@
 .navigation {
     display: flex;
     align-items: center;
-    margin-top: clamp(20px, 3vw, 27px);
+    /*padding-top: clamp(20px, 3vw, 27px);*/
+    padding-top: 5px;
     position: relative;
     justify-content: space-evenly;
     background-color: #fff;
@@ -32,23 +33,21 @@
 
 .navigation-menu {
     margin-right: clamp(20px, 10vw, 460px);
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
 }
 
 .navigation-menu ul {
     display: flex;
     margin-left: clamp(10px, 2vw, 60px);
     border-bottom: #DCDCDC 2px solid;
+    justify-content: space-evenly
 }
 
 .navigation-menu li {
     list-style-type: none;
     margin: 0 1rem;
     line-height: 150%;
-}
-
-.navigation-menu ul>li>a:hover {
-    border-bottom: 2px #252525 solid;
-    margin-bottom: -2px;
+    justify-content: center;
 }
 
 .navigation-menu li a {
@@ -61,6 +60,11 @@
     color: #252525;
     display: block;
     width: 100%;
+}
+
+.navigation-menu ul>li>a:hover {
+    border-bottom: 2px #252525 solid;
+    margin-bottom: -2px;
 }
 
 .hamburger {
@@ -77,7 +81,6 @@
     border-radius: 50%;
 }
 
-
 .input-container input {
     border: 1px solid #252525;
     border-radius: 5px;
@@ -87,7 +90,7 @@
     background-position: clamp(10px, 1vw, 15px), clamp(10px, 1vw, 15px);
     background-repeat: no-repeat;
     padding-left: 40px;
-    width: clamp(150px, 40vw, 270px);
+    width: clamp(150px, 66vw, 270px);
     height: clamp(40px, 3vw, 52px);
 }
 
@@ -97,50 +100,91 @@
     }
 }
 
-@media screen and (max-width: 768px) {
-    .navigation-menu ul {
-        visibility: hidden;
-    }
+.darkened {
+    background: rgba(0, 0, 0, 0.54);
 }
 
 @media screen and (max-width: 768px) {
+
+    .navigation {
+        padding-top: 10vw;
+        display: flex;
+        width: 100vw;
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    .navigation div {
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    .hamburger img {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    .input-container input {
+        width: 60vw;
+        height: 10vw;
+        background-color: white;
+        background-image: url('https://cdn.iconscout.com/icon/premium/png-256-thumb/search-4967899-4170595.png');
+        background-size: 5vw;
+        background-position: 1vw, 1vw;
+        background-repeat: no-repeat;
+    }
+
     .navigation-menu ul {
         position: absolute;
-        top: 60px;
-        left: 0;
+        top: 0;
+        right: 0;
         flex-direction: column;
-        width: 100%;
-        height: calc(100vh - 77px);
-        background-color: white;
-        border-top: 1px solid black;
+        width: 0;
+        height: 100vh;
+        background-color: #1F1F1F;
+        transition: all 0.75s ease;
     }
+
+    .expanded ul {
+        width: 40%;
+    }
+
+    .hamburger {
+        margin-left: auto;
+    }
+
+    .profile-picture {
+        margin: auto;
+    }
+
 
     .navigation-menu li {
         text-align: center;
-        margin: 0;
+        display: flex;
+        align-items: center;
+        text-align: center;
     }
 
     .navigation-menu li a {
-        color: black;
-        width: 100%;
-        padding: 1.5rem 0;
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 28px;
+        color: #FFFFFF;
     }
 
     .navigation-menu li:hover {
         background-color: #eee;
     }
-}
 
-@media screen and (max-width: 768px) {
-    .navigation-menu .expanded{
+
+    .navigation-menu.expanded {
+        z-index: 2;
         display: block;
     }
 
-    .navigation-menu {
-        flex: initial;
-        display: none;
-    }
-    
     .brand-name {
         display: none;
     }
