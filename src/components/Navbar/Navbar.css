@@ -37,7 +37,6 @@
 
 .navigation-menu ul {
     display: flex;
-    margin-left: clamp(10px, 2vw, 60px);
     justify-content: space-evenly
 }
 
