@@ -1,5 +1,5 @@
 import './App.css';
-import Player from './pages/Player.js';
+import Player from './pages/Player/PlayerPage.js';
 import FilmLibrary from './pages/FilmLibrary.js';
 import CringeWall from './pages/CringeWall.js';
 import Boozling from './pages/Boozling.js';
@@ -8,7 +8,6 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Navigate
 } from "react-router-dom";
 
 function App() {
@@ -18,6 +17,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Player />} />
+          <Route path='bot' element={<Player />} />
           <Route path="films" element={<FilmLibrary />} />
           <Route path="cringe-wall" element={<CringeWall />} />
           <Route path="boozling" element={<Boozling />} />
@@ -27,6 +27,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;

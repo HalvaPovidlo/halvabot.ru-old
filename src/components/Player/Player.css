@@ -1,7 +1,9 @@
 .player {
-    display: block;
-    background-color: #fff;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
-    border-radius: 16px;
-    /*max-height: 100vw;*/
+    height: 60vh;
+    margin-top: 5vw;
+    justify-content: space-around;
+    align-items: center;
 }

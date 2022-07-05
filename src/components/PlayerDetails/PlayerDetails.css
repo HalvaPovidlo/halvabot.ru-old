@@ -4,6 +4,7 @@
     height: clamp(1px, 50vw, 300px);
     border-radius: 50%;
     margin: 1rem auto;
+    margin-bottom: 5vh;
 }
 
 .details-img>img {
@@ -14,6 +15,7 @@
 }
 
 .details-title {
+    width: 60vw;
     padding-top: 20px;
     text-align: center;
     font-family: 'Manrope';
@@ -23,12 +25,13 @@
 }
 
 .details-artist {
+    width: 60vw;
     text-align: center;
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
     font-size: clamp(14px, 3vw, 30px);
-    padding-bottom: 5vw;
+    margin-bottom: 5vh;
 }
 
 @media screen and (max-width: 768px) {

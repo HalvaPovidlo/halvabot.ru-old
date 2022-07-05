@@ -2,6 +2,14 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    width: 100vw;
+}
+
+
+@media (min-width:961px) {
+    .player-controls {
+        width: 40vw;
+    }
 }
 
 .player-controls .skip-button {
@@ -13,7 +21,7 @@
     background-color: #fff;
 }
 
-.skip-button img{
+.skip-button img {
     height: 45px;
     width: 42px;
 }
@@ -25,8 +33,18 @@
     color: #1f1f1f;
     background-color: #fff;
     cursor: pointer;
-
 }
+
+.player-controls .broadcast-button img, .player-controls .repeat-button img {
+    height: clamp(30px, 3vw, 60px);
+    width: clamp(30px, 3vw, 60px);
+}
+
+.player-controls .skip-button img{
+    height: clamp(40px, 3.5vw, 60px);
+    width: clamp(40px, 3.5vw, 60px);
+}
+
 
 .player-controls .repeat-button {
     border: none;

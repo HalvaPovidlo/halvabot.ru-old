@@ -4,7 +4,7 @@ import './ScrollBar.css'
 const ScrollBar = (props) => {
     let position = props?.songStatus?.position || 0;
     let duration = props?.songStatus?.duration || 0;
-    let x = position / duration * 80;
+    let x = position / duration * 60;
 
     function formatter(number){
         number = Math.round(number);
