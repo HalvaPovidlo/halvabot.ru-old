@@ -31,7 +31,6 @@ const Player = (props) => {
 
   return (
     <div className='player'>
-      <audio></audio>
       <PlayerDetails data={data} songStatus={songStatus}> </PlayerDetails>
       <PlayerControls> </PlayerControls>
     </div>

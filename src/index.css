@@ -2,11 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    padding: 1px solid green;
 }
 
-html, body {
-    background-color: #fff;
-    height: 90vh;
+@media (min-width:1025px) {
+    html {
+        background: url(/src/assets/background-image.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        z-index: 1;
+    }
+
 }
 
 .button:active {
@@ -15,14 +23,11 @@ html, body {
 }
 
 .player-page {
-    height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.sidebar{
+.sidebar {
     width: 260px;
-    flex-shrink: 0;
     background-color: #1F1F1F;
 }
-

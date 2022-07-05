@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     /*padding-top: clamp(20px, 3vw, 27px);*/
-    padding-top: 5px;
+    padding-top: 25px;
     position: relative;
     justify-content: space-evenly;
     background-color: #fff;
@@ -32,18 +32,18 @@
 }
 
 .navigation-menu {
-    margin-right: clamp(20px, 10vw, 460px);
     transition: width 2s, height 2s, background-color 2s, transform 2s;
 }
 
 .navigation-menu ul {
     display: flex;
     margin-left: clamp(10px, 2vw, 60px);
-    border-bottom: #DCDCDC 2px solid;
     justify-content: space-evenly
 }
 
 .navigation-menu li {
+    display: inline-block;
+    font-size: 0;
     list-style-type: none;
     margin: 0 1rem;
     line-height: 150%;
@@ -51,32 +51,46 @@
 }
 
 .navigation-menu li a {
+    display: inline-flex;
+    min-height: 2vw;
     text-decoration: none;
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;
     font-size: clamp(10px, 1.2vw, 20px);
-    line-height: 27px;
+    line-height: 28px;
     color: #252525;
-    display: block;
-    width: 100%;
+    letter-spacing: 0.235px
 }
 
 .navigation-menu ul>li>a:hover {
     border-bottom: 2px #252525 solid;
-    margin-bottom: -2px;
+    font-weight: 600;
+    letter-spacing: 0;
 }
+
+.navigation-menu li a:after {
+    content: attr(data-text);
+    content: attr(data-text) / "";
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+    font-weight: var(--bold);
+}
+
 .hamburger {
     border: none;
     outline: none;
-    font-size: clamp(14px, 5vw, 48px);
+    font-size: clamp(14px, 5vw, 60px);
     background-color: #fff;
     cursor: pointer;
 }
 
 .profile-picture img {
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
 }
 
@@ -86,7 +100,7 @@
     background-color: white;
     background-image: url('https://cdn.iconscout.com/icon/premium/png-256-thumb/search-4967899-4170595.png');
     background-size: clamp(16px, 1.5vw, 28px);
-    background-position: clamp(10px, 1vw, 15px), clamp(10px, 1vw, 15px);
+    background-position: clamp(10px, 1vw, 10px), clamp(10px, 1vw, 10px);
     background-repeat: no-repeat;
     padding-left: 40px;
     width: clamp(150px, 66vw, 270px);
@@ -95,7 +109,7 @@
 
 @media screen and (min-width: 768px) {
     .hamburger {
-        visibility: hidden;
+        display: none;
     }
 }
 
@@ -172,16 +186,18 @@
         font-size: 20px;
         line-height: 28px;
         color: #FFFFFF;
-
     }
 
     .navigation-menu li:hover {
         background-color: #eee;
     }
+
+
     .navigation-menu.expanded {
         z-index: 2;
         display: block;
     }
+
     .brand-name {
         display: none;
     }
