@@ -65,18 +65,6 @@ export const handleStats = async () => {
     return data;
 }
 
-export const handleRadio = async () => {
-    const requestOptions = {
-        method: 'POST',
-        body: JSON.stringify({enable: true})
-    };
-
-    const response = await fetch(URL + '/setradio', requestOptions);
-    return response;
-}
-
-
-
 export const getMockURL = async () => {
     const response = await axios.get("http://halvabot.ru/mock", { method: 'GET' });
     return response;    //async data needs to be used on fly

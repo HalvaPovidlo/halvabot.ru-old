@@ -1,42 +1,50 @@
 import React from 'react'
-import { handleSkip, handleLoop, handleRadio } from '../../API/API';
-import { useState } from 'react'
+import { handleSkip, handleLoop, URL } from '../../API/API';
+import { useState, useEffect } from 'react'
 import './PlayerControls.css'
 import skip from '../../assets/skip.svg'
 import radio from '../../assets/radio.svg'
 import repeat from '../../assets/repeat.svg'
 
-const PlayerControls = () => {
+const PlayerControls = (props) => {
 
-    const [isRadioActive, setIsRadioActive] = useState(false);
-    const [isLoopActive, setIsLoopActive] = useState(false);
+    const handleRadio = async (radioStatus) => {
+        const requestOptions = {
+            method: 'POST',
+            body: JSON.stringify({enable: radioStatus})
+        };
+    
+        const response = await fetch(URL + '/setradio', requestOptions);
+    }
+
+    const [isRadioActive, setIsRadioActive] = useState(props.data.radio || false);
+    const [isLoopActive, setIsLoopActive] = useState(props.data.radio || false);
 
     const handleLoopClick = () => {
-        setIsLoopActive(!isLoopActive);
+        setIsLoopActive(current => !current);
     }
 
     const handleRadioClick = () => {
-        setIsRadioActive(!isRadioActive);
+        setIsRadioActive(isRadioActive ? false : true, console.log(isRadioActive));
     }
 
     return (
         <div className='player-controls'>
-
             <button
                 className="broadcast-button button"
-                style={{ color: isRadioActive ? '#fa586a' : '' }}
+                style={{ backgroundColor: isRadioActive ? '#fa586a' : '' }}
                 onClick={(e) => {
-                    handleRadio();
                     handleRadioClick();
+                    handleRadio(isRadioActive);
                 }}>
-                <img src={radio} alt='radio'></img> 
+                <img src={radio} alt='radio'></img>
 
             </button>
 
             <button className="skip-button button" onClick={(e) => {
                 handleSkip();
             }}>
-                <img src={skip} alt='skip'></img> 
+                <img src={skip} alt='skip'></img>
 
             </button>
 
@@ -47,7 +55,7 @@ const PlayerControls = () => {
                     handleLoop();
                     handleLoopClick();
                 }}>
-                <img src={repeat} alt='repeat'></img> 
+                <img src={repeat} alt='repeat'></img>
             </button>
         </div>
     )
