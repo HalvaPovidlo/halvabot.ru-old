@@ -1,15 +1,16 @@
 .brand-name img {
-    height: clamp(20px, 10vw, 85px);
-    width: clamp(20px, 10vw, 85px);
+    height: clamp(20px, 5vw, 85px);
+    width: clamp(20px, 5vw, 85px);
 }
 
 .navigation {
     display: flex;
     align-items: center;
+    margin-left: 5vw;
+    margin-right: 5vw;
     /*padding-top: clamp(20px, 3vw, 27px);*/
     padding-top: 25px;
     position: relative;
-    justify-content: space-evenly;
     background-color: #fff;
 }
 
@@ -19,7 +20,6 @@
     text-decoration: none;
     color: black;
     font-size: 1.3rem;
-    margin-left: clamp(20px, 3rem, 100px);
 }
 
 .logo-title {
@@ -27,12 +27,14 @@
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
-    font-size: clamp(18px, 3vw, 37px);
+    font-size: clamp(18px, 2vw, 37px);
     line-height: 101.1%;
 }
 
 .navigation-menu {
     transition: width 2s, height 2s, background-color 2s, transform 2s;
+    margin-left: 3vw;
+    margin-right: auto;
 }
 
 .navigation-menu ul {
@@ -40,11 +42,22 @@
     justify-content: space-evenly
 }
 
+/*
+font-weight: 400;
+font-size: 14px;
+line-height: 19px;
+
+font-weight: 400;
+font-size: 20px;
+line-height: 27px;
+*/
+
+
 .navigation-menu li {
     display: inline-block;
     font-size: 0;
     list-style-type: none;
-    margin: 0 1rem;
+    margin: 0 1vw;
     line-height: 150%;
     justify-content: center;
 }
@@ -56,7 +69,7 @@
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 400;
-    font-size: clamp(10px, 1.2vw, 20px);
+    font-size: clamp(14px, 1.2vw, 24px);
     line-height: 28px;
     color: #252525;
     letter-spacing: 0.235px
@@ -93,17 +106,50 @@
     border-radius: 50%;
 }
 
+.input-container {
+    margin-right: 2.6vw;
+}
+
 .input-container input {
     border: 1px solid #252525;
-    border-radius: 5px;
+    border-radius: 25px;
     background-color: white;
     background-image: url('https://cdn.iconscout.com/icon/premium/png-256-thumb/search-4967899-4170595.png');
     background-size: clamp(16px, 1.5vw, 28px);
     background-position: clamp(10px, 1vw, 10px), clamp(10px, 1vw, 10px);
     background-repeat: no-repeat;
     padding-left: 40px;
-    width: clamp(150px, 66vw, 270px);
-    height: clamp(40px, 3vw, 52px);
+    width: max(14vw, 140px);
+    height: 2vw;
+    color: #252525;
+    font-family: 'Manrope';
+    font-style: normal;
+}
+
+.input-container input::-webkit-input-placeholder {
+    color: #252525;
+    font-family: 'Manrope';
+    font-style: normal;
+}
+
+
+.input-container input ::-moz-placeholder {
+    color: #252525;
+    font-family: 'Manrope';
+    font-style: normal;
+}
+
+
+.input-container input:-ms-input-placeholder {
+    color: #252525;
+    font-family: 'Manrope';
+    font-style: normal;
+}
+
+.input-container input :-moz-placeholder {
+    color: #252525;
+    font-family: 'Manrope';
+    font-style: normal;
 }
 
 @media screen and (min-width: 768px) {

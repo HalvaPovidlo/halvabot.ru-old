@@ -11,16 +11,16 @@ const Navbar = (props) => {
     const [isNavExpanded, setIsNavExpanded] = useState(false)
     const links = [
         {
-            "text": "Bot",
+            "text": "D-Bot",
             "link": "bot"
         }, {
-            "text": "Фильмотека",
+            "text": "Смотрельня",
             "link": "films"
-        }, {
+        },/* {
             "text": "Стена кринжа",
             "link": "cringe-wall"
-        }, {
-            "text": "Бухичи",
+        },*/ {
+            "text": "Планёрка",
             "link": "boozling"
         }, {
             "text": "Quotes",

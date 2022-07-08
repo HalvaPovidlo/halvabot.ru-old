@@ -4,35 +4,28 @@ import PlayerControls from '../PlayerControls/PlayerControls'
 import { URL } from '../../API/API'
 import './Player.css'
 
-const Player = (props) => {
+const Player = () => {
   const [data, setData] = useState({});
-  const [songStatus, setSongStatus] = useState();
 
   useEffect(() => {
-    const handleNow = async () => {
+    const handleStatus = async () => {
       const requestOptions = {
         method: 'GET',
       };
 
-      const nowResponse = await fetch(URL + '/now', requestOptions);
-      const nowData = await nowResponse.json();
-      
-      const songStatusResponse = await fetch(URL + '/songstatus', {method: "GET"})
-      const songStatusResponseData = await songStatusResponse.json(); 
-
+      const statusResponse = await fetch(URL + '/status', requestOptions);
+      const statusData = await statusResponse.json();
       setTimeout(() => {
-        setData(nowData);
-        setSongStatus(songStatusResponseData)
+        setData(statusData);
       }, 1000)
-    };
-
-    handleNow();
-  }, [data])
+    }
+    handleStatus();
+  })
 
   return (
     <div className='player'>
-      <PlayerDetails data={data} songStatus={songStatus}> </PlayerDetails>
-      <PlayerControls> </PlayerControls>
+      <PlayerDetails data={data}> </PlayerDetails>
+      <PlayerControls data={{radio: data.radio, loop: data.loop}}> </PlayerControls>
     </div>
   )
 }

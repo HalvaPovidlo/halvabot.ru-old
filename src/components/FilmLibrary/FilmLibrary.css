@@ -1,0 +1,9 @@
+.FilmLibrary-container{
+    margin-left: 5vw;
+    margin-top: 3vh;
+    display: grid;
+    grid-template-columns: 200px 50px;
+    grid-template-rows: 300px auto; 
+    column-gap: 1px;
+    row-gap: 1px;
+}

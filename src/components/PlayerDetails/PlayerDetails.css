@@ -1,16 +1,18 @@
 .details-img {
+    display: flex;
     overflow: hidden;
-    width: clamp(1px, 50vw, 300px);
-    height: clamp(1px, 50vw, 300px);
+    width: 29vh;
+    height: 29vh;
     border-radius: 50%;
     margin: 1rem auto;
     margin-bottom: 5vh;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .details-img>img {
     display: block;
     margin: 0 auto;
-    margin-left: -40%;
     height: 100%;
 }
 
@@ -21,7 +23,7 @@
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
-    font-size: clamp(20px, 5vw, 33px);
+    font-size: clamp(18px, 2vw, 28px);
 }
 
 .details-artist {
@@ -30,7 +32,7 @@
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 500;
-    font-size: clamp(14px, 3vw, 30px);
+    font-size: clamp(14px, 1.5vw, 26px);
     margin-bottom: 5vh;
 }
 
