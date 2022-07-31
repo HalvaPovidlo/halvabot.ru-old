@@ -13,7 +13,7 @@ const Player = () => {
         method: 'GET',
       };
 
-      const statusResponse = await fetch(URL + '/status', requestOptions);
+      const statusResponse = await fetch(URL + '/music/status', requestOptions);
       const statusData = await statusResponse.json();
       setTimeout(() => {
         setData(statusData);

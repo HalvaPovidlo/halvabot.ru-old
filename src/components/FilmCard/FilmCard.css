@@ -3,12 +3,9 @@
     width: auto;
 }
 
-.FilmCard {}
 
-/*
-    display: grid;
-    grid-template-columns: 200px 50px 200px;
-    grid-template-rows: 300px auto 300px; 
-    column-gap: 10px;
-    row-gap: 15px;
-    */
+.FilmCard:hover {
+    background-image:
+        linear-gradient(to bottom, #252525, #fff);
+        color: black;
+}

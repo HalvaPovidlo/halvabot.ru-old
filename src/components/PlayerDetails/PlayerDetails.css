@@ -1,8 +1,13 @@
+.details{
+    display: flex;
+    flex-direction: column;
+}
+
 .details-img {
     display: flex;
     overflow: hidden;
-    width: 29vh;
-    height: 29vh;
+    width: 33vh;
+    height: 33vh;
     border-radius: 50%;
     margin: 1rem auto;
     margin-bottom: 5vh;
@@ -17,7 +22,7 @@
 }
 
 .details-title {
-    width: 60vw;
+    width: 52vw;
     padding-top: 20px;
     text-align: center;
     font-family: 'Manrope';
@@ -27,7 +32,7 @@
 }
 
 .details-artist {
-    width: 60vw;
+    width: 52vw;
     text-align: center;
     font-family: 'Manrope';
     font-style: normal;

@@ -1,9 +1,33 @@
-.FilmLibrary-container{
+.FilmLibrary-container {
     margin-left: 5vw;
     margin-top: 3vh;
     display: grid;
-    grid-template-columns: 200px 50px;
-    grid-template-rows: 300px auto; 
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    grid-template-rows: 300px 300px 300px;
     column-gap: 1px;
     row-gap: 1px;
+}
+
+.categories {
+    display: flex;
+    margin-left: 5vw;
+    margin-top: 3vh;
+    list-style: none;
+}
+
+.categories li a {
+    color: #666;
+    text-decoration: none;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(14px, 1.2vw, 24px);
+    line-height: 28px;
+    color: #252525;
+    letter-spacing: 0.235px;
+}
+
+.categories li:not(:first-child) {
+
+    margin-left: 2vw;
 }

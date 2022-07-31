@@ -1,5 +1,5 @@
 import axios from 'axios'
-export const URL = "http://51.250.81.4:9091/api/v1/music";
+export const URL = "http://51.250.81.4:9091/api/v1";
 
 
 export const handleEnqueue = async (song) => {
@@ -43,13 +43,17 @@ export const handleLoop = async () => {
     return response;
 }
 
+/*
 export const handleSkip = async () => {
     const requestOptions = {
         method: 'GET',
+        headers: new Headers({
+            'Authorization': 'Basic '+btoa('username:password'), 
+        }), 
     };
     const response = await fetch(URL + '/skip', requestOptions);
     return response;
-}
+}*/
 
 export const handleStats = async () => {
     const requestOptions = {
@@ -75,4 +79,23 @@ export const getServerURL = async () => {
     const response = await axios.get("http://halvabot.ru/server", { method: "GET" });
     return response;    //async data needs to be used on fly
     //setServerURL(response.data);
+}
+
+export const fetchRadioValue = async () => {
+    const requestOptions = {
+        method: 'GET',
+    };
+    const statusResponse = await fetch(URL + '/radiostatus', requestOptions);
+    const statusData = await statusResponse.json();
+    return statusData;
+}
+
+export const fetchStatus = async () => {
+    const requestOptions = {
+        method: 'GET',
+    };
+    const statusResponse = await fetch(URL + '/status', requestOptions);
+    const statusData = await statusResponse.json();
+    console.log(statusData);
+    return statusData;
 }

@@ -101,8 +101,8 @@ line-height: 27px;
 }
 
 .profile-picture img {
-    height: 50px;
-    width: 50px;
+    height: max(3.3vw, 50px);
+    width: max(3.3vw, 50px);
     border-radius: 50%;
 }
 
