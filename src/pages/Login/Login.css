@@ -1,0 +1,73 @@
+.login-wrapper {
+    margin: 19vh auto;
+    width: 203px;
+}
+
+.brand-wrapper {
+    display: flex;
+    width: 180px;
+    justify-content: space-evenly;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 101.1%;
+    margin-bottom: 40px;
+}
+
+.brand-wrapper p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-wrapper img {
+    color: black;
+    height: 65px;
+    width: 65px;
+}
+
+.form-wrapper {
+    width: 203px;
+    height: 109px;
+    background-color: #252525;
+    padding-bottom: 1vh;
+}
+
+.form-wrapper form {
+    padding-top: 18px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-wrapper input {
+    margin-bottom: 12px;
+    width: 180px;
+    height: 30px;
+}
+
+.form-wrapper input::placeholder {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 101.1%;
+}
+
+.form-wrapper .submit-button {
+    background-color: aliceblue;
+}
+
+.form-wrapper button {
+    margin-top: 20px;
+    width: 203px;
+    height: 30px;
+    background-color: #252525;
+    color: #FFFFFF;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 101.1%;
+}

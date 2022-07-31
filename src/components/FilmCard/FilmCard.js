@@ -9,12 +9,9 @@ const FilmCard = (props) => {
         backgroundImage: `url(${props.style.url})`
     };
 
-    console.log(style);
-
     return (
         <div className='FilmCard-container'>
             <div className='FilmCard' style={style}>
-
             </div>
         </div>
     )

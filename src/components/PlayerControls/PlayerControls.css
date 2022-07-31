@@ -8,7 +8,7 @@
 
 @media (min-width:768px) {
     .player-controls {
-        width: 40vw;
+        width: 35vw;
     }
 }
 
@@ -38,8 +38,8 @@
 
 .player-controls .broadcast-button img,
 .player-controls .repeat-button img {
-    height: clamp(30px, 3vw, 60px);
-    width: clamp(30px, 3vw, 60px);
+    height: clamp(30px, 2.5vw, 60px);
+    width: clamp(30px, 2.5vw, 60px);
 }
 
 .player-controls .skip-button img {

@@ -16,10 +16,7 @@ const Navbar = (props) => {
         }, {
             "text": "Смотрельня",
             "link": "films"
-        },/* {
-            "text": "Стена кринжа",
-            "link": "cringe-wall"
-        },*/ {
+        }, {
             "text": "Планёрка",
             "link": "boozling"
         }, {

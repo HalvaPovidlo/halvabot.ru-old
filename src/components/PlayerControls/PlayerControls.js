@@ -1,10 +1,11 @@
 import React from 'react'
-import { handleSkip, handleLoop, URL } from '../../API/API';
-import { useState, useEffect } from 'react'
+import { handleLoop, URL } from '../../API/API';
+import { useState, useContext } from 'react'
 import './PlayerControls.css'
 import skip from '../../assets/skip.svg'
 import radio from '../../assets/radio.svg'
 import repeat from '../../assets/repeat.svg'
+import { UserContext } from '../../Context';
 
 const PlayerControls = (props) => {
 
@@ -14,11 +15,24 @@ const PlayerControls = (props) => {
             body: JSON.stringify({enable: radioStatus})
         };
     
-        const response = await fetch(URL + '/setradio', requestOptions);
+        const response = await fetch(URL + '/music/setradio', requestOptions);
+    }
+
+    const handleSkip = async () => {
+        const requestOptions = {
+            method: 'POST',
+            headers: new Headers({
+                'Authorization': `Bearer ${token}`, 
+            }), 
+        };
+        const response = await fetch(URL + '/music/skip', requestOptions);
+        return response;
     }
 
     const [isRadioActive, setIsRadioActive] = useState(props.data.radio || false);
     const [isLoopActive, setIsLoopActive] = useState(props.data.radio || false);
+
+    const token = useContext(UserContext);
 
     const handleLoopClick = () => {
         setIsLoopActive(current => !current);
